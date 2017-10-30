@@ -28,30 +28,8 @@ window.showConfirm = function (msg, title, hidecallback) {
 };
 
 $(document).ready(function () {
-    $("#btnExam").on("click", function (e) {
-        location.href = "/enrollExam";
-    });
-    $("#btnClass").on("click", function (e) {
-        location.href = "/enrollClass";
-    });
-    $("#btnPersonal").on("click", function (e) {
-        location.href = "/personalCenter";
-    });
-
-    $("#btnOpenId").on("click", function (e) {
-        location.href = "/openIdGeter";
-    });
-
-    $('#confirmModal #btnConfirmSave').on("click", function (e) {
-
-    });
-
-    $('#confirmModal .modal-footer .btn-default').on("click", function (e) {
-        hideConfirmForm();
-    });
 
 });
-
 
 window.selfAjax = function (method, url, filter, callback) {
     loading();
@@ -75,16 +53,6 @@ window.loading = function () {
 window.hideLoading = function () {
     $("#loadingIndicator").modal('hide');
 };
-//Html编码获取Html转义实体  
-// function htmlEncode(value) {
-//     return encodeURI(value);
-//     // return $('<div/>').text(value).html();
-// };
-//Html解码获取Html实体  
-// function htmlDecode(value) {
-//     return decodeURI(value);
-//     // return $('<div/>').html(value).text();
-// };
 
 String.prototype.format = function () {
     var result = this;
