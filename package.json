@@ -1,11 +1,11 @@
 {
-  "name": "wplearn",
+  "name": "wpqa",
   "version": "1.0.0",
   "private": true,
-  "description": "wplearn website",
+  "description": "wpqa website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pucumt/WPLearn.git"
+    "url": "https://github.com/weple1/wpqa.git"
   },
   "license": "GPL",
   "scripts": {

@@ -1,24 +1,23 @@
 const db = require('../../db'),
     config = require('../../settings');
 
-const WS_user = db.defineModel('ws_users', {
-    name: {
-        type: db.STRING(20)
-    },
-    password: db.STRING(50)
+const Comment = db.defineModel('comments', {
+    qid: db.STRING(32), // 问题id
+    content: db.STRING(1000)
 });
-module.exports = WS_user;
+module.exports = Comment;
 
-WS_user.getFilter = function (filter) {
+//读取用户信息
+Comment.getFilter = function (filter) {
     filter.isDeleted = false;
-    return WS_user.findOne({
+    return Comment.findOne({
         'where': filter
     });
 };
 
-WS_user.getFilters = function (filter) {
+Comment.getFilters = function (filter) {
     filter.isDeleted = false;
-    return WS_user.findAll({
+    return Comment.findAll({
         'where': filter,
         order: [
             ['createdDate'],
@@ -27,9 +26,9 @@ WS_user.getFilters = function (filter) {
     });
 };
 
-WS_user.getFiltersWithPage = function (page, filter) {
+Comment.getFiltersWithPage = function (page, filter) {
     filter.isDeleted = false;
-    return WS_user.findAndCountAll({
+    return Comment.findAndCountAll({
         'where': filter,
         order: [
             ['createdDate'],
