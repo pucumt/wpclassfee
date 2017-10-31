@@ -1,3 +1,5 @@
+// 管理员的账号，分等级权限将会不同
+
 const db = require('../../db'),
     config = require('../../settings');
 

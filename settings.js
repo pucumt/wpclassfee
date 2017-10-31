@@ -1,6 +1,6 @@
 var option = {
-    cookieSecret: 'wpqa',
-    db: 'wpqa',
+    cookieSecret: 'WPLearn',
+    db: 'WPLearn',
     host: '127.0.0.1',
     port: '10105',
     username: 'root',
