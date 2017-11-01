@@ -2,8 +2,7 @@
     logout = require('./logout.js'),
 
     user = require('./user.js'),
-    auth = require("./auth"),
-    checkLogin = auth.checkLogin;
+    question = require('./question.js');
 
 module.exports = function (app) {
     login(app);
@@ -11,4 +10,6 @@ module.exports = function (app) {
 
     //basic
     user(app);
+
+    question(app);
 };

@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f8f8;
+    background-color: #fff;
 }
 
 header,
@@ -8,12 +8,47 @@ footer,
 .header-content {
     margin: 0 auto;
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: #fff;
 }
 
 footer {
     border-top: 1px solid gray;
     padding-top: 20px;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
 }
 
 @media (min-width: 360px) {
@@ -47,9 +82,19 @@ header {
     line-height: 46px;
 }
 
+.header-content .logo a:hover {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 600px;
+}
+
 .container .content {
     width: 960px;
     margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
 }
 
 .header-content div {
@@ -71,7 +116,13 @@ header {
     margin-left: 20px;
 }
 
-.header-content .search .form-control {}
+.header-content .question {
+    margin-top: -2px;
+    margin-left: 10px;
+}
+
+
+/* .header-content .search .form-control {} */
 
 .header-content .search .btn {
     /* line-height: 34px; */
@@ -79,4 +130,47 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+
+/* 
+.container .content ul.ul-content {
+     border-top: 1px solid #ddd;
+    margin-top: 40px; 
+} */
+
+.container .content ul.ul-content li {
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 5px 0;
+}
+
+.container .content ul.ul-content li:hover {
+    background-color: #f4fef6;
+}
+
+.container .content ul.ul-content li .title {
+    white-space: nowrap;
+    margin: 10px 20px 10px 10px;
+    height: 16px;
+    display: inline;
+    float: left;
+    font-size: 14px;
+    line-height: 16px;
+    color: #259;
+    font-weight: 700;
+}
+
+#loginForm {
+    margin: 0 auto;
+    width: 300px;
+}
+
+#loginForm .warning {
+    color: red;
+}
+
+.ask.content #content {
+    width: 100%;
+    resize: none;
 }

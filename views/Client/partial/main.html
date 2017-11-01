@@ -16,14 +16,21 @@
 <body>
     <header>
         <div class="clearfix header-content">
-            <div class="logo pull-left">{{ websiteTitle }}</div>
+            <div class="logo pull-left">
+                <a href="/">{{ websiteTitle }}</a>
+            </div>
             <div class="search pull-left">
                 <input type="text" class="form-control" placeholder="Search for...">
                 <button class="btn btn-default" type="button">搜索</button>
             </div>
+            <div class="question pull-left">
+                <button class="btn btn-default" id="btnAsk" type="button">提问</button>
+            </div>
             <div class="userinfo pull-right">
-                用户: {{ user.name }}
-                <a href="/admin/logout">退出</a>
+                {% if user %} 用户: {{ user.name }}
+                <a href="/logout">退出</a>
+                {% else %}
+                <a href="/login">登录</a> {% endif %}
             </div>
         </div>
     </header>
@@ -33,7 +40,17 @@
     <footer class="text-center">
         Copyright&copy;百分百 2017, All Rights Reserved.
     </footer>
-    <script type="text/javascript" src="/default/assets/js/Client/index.js"></script>
+    {% block modal %}{% endblock %}
+    <div class="modal fade bs-example-modal-sm" id="loadingIndicator" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" style="margin-top: 50vh;" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    加载中。。。
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/default/assets/js/Client/main.js"></script>
 </body>
 
 </html>

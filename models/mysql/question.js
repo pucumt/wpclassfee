@@ -4,7 +4,16 @@ const db = require('../../db'),
 const Question = db.defineModel('questions', {
     title: db.STRING(50),
     content: db.STRING(1000),
-    answer: db.STRING(1000)
+    answer: db.STRING(1000),
+    isChecked: { // only isChecked==true will show in index
+        type: db.BOOLEAN,
+        defaultValue: false
+    },
+    checkedBy: {
+        type: db.STRING(50),
+        defaultValue: ""
+    },
+    createdName: db.STRING(50)
 });
 module.exports = Question;
 

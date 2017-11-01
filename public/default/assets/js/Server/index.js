@@ -2,8 +2,8 @@ $(document).ready(function () {
     $("#header_btnUser").on("click", function (e) {
         location.href = "/admin/userList";
     });
-    $("#header_btnClass").on("click", function (e) {
-        location.href = "/admin/trainClassList";
+    $("#header_btnQuestion").on("click", function (e) {
+        location.href = "/admin/questionList";
     });
     $("#header_btnStudent").on("click", function (e) {
         location.href = "/admin/studentAccountList";

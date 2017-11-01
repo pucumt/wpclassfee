@@ -6,7 +6,7 @@ var model = require("../../model.js"),
 
 module.exports = function (app) {
     app.get('/admin/userList', checkLogin);
-    app.post('/admin/userList', auth.checkSecure([100]));
+    app.get('/admin/userList', auth.checkSecure([100]));
     app.get('/admin/userList', function (req, res) {
         res.render('Server/userList.html', {
             title: '>管理员设置',

@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#loginForm').formValidation({
+$(document).ready(function () {
+    $('.login form').formValidation({
         // List of fields and their validation rules
         fields: {
             name: {
@@ -22,6 +22,6 @@ $(document).ready(function() {
     });
 
     if (location.search.startsWith("?err")) {
-        $("#loginForm .warning").html("用户名或密码不正确！");
+        $(".login .warning").text("用户名或密码不正确！");
     }
 });

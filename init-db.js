@@ -21,6 +21,11 @@ function step2() {
         name: "admin",
         password: password,
         role: 100
+    }).then(function () {
+        model.ws_user.create({
+            name: "test",
+            password: password
+        });
     });
 };
 
