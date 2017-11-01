@@ -1,0 +1,56 @@
+{% extends "Server/partial/main.html" %} {% block left %} {% include "Server/partial/questionSetting.html" %} {% endblock
+%} {% block main %}
+<div class="title">
+    <h1>
+        内容管理
+    </h1>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="InfoSearch">
+            <div class="row form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name" class="control-label">问题:</label>
+                        <input type="text" maxlength="30" class="form-control" name="name" id="name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="isChecked" class="control-label">状态:</label>
+                        <select name="isChecked" id="isChecked" class="form-control">
+                            <option value="0">未处理</option>
+                            <option value="1">已通过</option>
+                            <option value="9">已拒绝</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" id="btnSearch" class="btn btn-primary panelButton">查询</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="content">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:80px;">提问者</th>
+                <th>标题</th>
+                <th style="width:160px;">时间</th>
+                <th style="width:120px;">操作</th>
+            </tr>
+        </thead>
+        <tbody id="gridBody">
+        </tbody>
+    </table>
+</div>
+<div id="selectModal">
+    <input type="hidden" id="total" value="0" />
+    <input type="hidden" id="page" value="0" /> {% include "Server/partial/popuppaging.html" %}
+</div>
+{% endblock %} {% block modal %}
+<script type="text/javascript" src="/default/assets/js/moment.js"></script>
+<script type="text/javascript" src="/default/assets/js/Server/questionList.js"></script>
+{% endblock %}

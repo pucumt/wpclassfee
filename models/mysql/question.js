@@ -5,9 +5,9 @@ const Question = db.defineModel('questions', {
     title: db.STRING(50),
     content: db.STRING(1000),
     answer: db.STRING(1000),
-    isChecked: { // only isChecked==true will show in index
-        type: db.BOOLEAN,
-        defaultValue: false
+    isChecked: { // only isChecked==1 will show in index, 0 is default 9 is refused
+        type: db.INTEGER,
+        defaultValue: 0
     },
     checkedBy: {
         type: db.STRING(50),
