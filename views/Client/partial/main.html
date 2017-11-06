@@ -14,34 +14,57 @@
 </head>
 
 <body>
-    <header>
-        <div class="clearfix header-content">
-            <div class="logo pull-left">
-                <a href="/">{{ websiteTitle }}</a>
+    <div class="content-body">
+        <header>
+            <div class="clearfix header-content">
+                <div class="logo pull-left">
+                    <a href="/">{{ websiteTitle }}</a>
+                </div>
+                <div class="search pull-left">
+                    <input type="text" id="txtSearch" value="{{ search }}" class="form-control" placeholder="Search for...">
+                    <button class="btn btn-default" id="btnSearch" type="button">搜索</button>
+                </div>
+                <div class="question pull-left">
+                    <button class="btn btn-default" id="btnAsk" type="button">提问</button>
+                </div>
+                <div class="userinfo pull-right">
+                    {% if user %}
+                    <a href="/personal" style="margin-right:20px;">个人中心</a>用户: {{ user.name }}
+                    <a href="/logout" style="margin-left:20px;">退出</a>
+                    {% else %}
+                    <a href="/login">登录</a> {% endif %}
+                </div>
             </div>
-            <div class="search pull-left">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <button class="btn btn-default" type="button">搜索</button>
-            </div>
-            <div class="question pull-left">
-                <button class="btn btn-default" id="btnAsk" type="button">提问</button>
-            </div>
-            <div class="userinfo pull-right">
-                {% if user %} 用户: {{ user.name }}
-                <a href="/logout">退出</a>
-                {% else %}
-                <a href="/login">登录</a> {% endif %}
-            </div>
+        </header>
+        <div class="container">
+            {% block main %}{% endblock %}
         </div>
-    </header>
-    <div class="container">
-        {% block main %}{% endblock %}
     </div>
     <footer class="text-center">
         Copyright&copy;百分百 2017, All Rights Reserved.
     </footer>
+
     {% block modal %}{% endblock %}
-    <div class="modal fade bs-example-modal-sm" id="loadingIndicator" tabindex="-1" role="dialog">
+    <div class="modal fade bs-example-modal-sm" id="confirmModal" tabindex="-2" role="dialog">
+        <div class="modal-dialog modal-sm" style="" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="confirmModalLabel">确认</h4>
+                </div>
+                <div class="modal-body">
+                    出错啦?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" id="btnConfirmSave" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal fade bs-example-modal-sm" id="loadingIndicator" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" style="margin-top: 50vh;" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -49,7 +72,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <script type="text/javascript" src="/default/assets/js/Client/main.js"></script>
 </body>
 

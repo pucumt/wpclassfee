@@ -1,6 +1,9 @@
 var hideConfirmForm;
 window.showAlert = function (msg, title, callback) {
-    $('#confirmModal').show();
+    $('#confirmModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $('#confirmModal #confirmModalLabel').text(title || "提示");
     $('#confirmModal .modal-body').text(msg);
 
@@ -14,7 +17,10 @@ window.showAlert = function (msg, title, callback) {
 };
 
 window.showConfirm = function (msg, title, hidecallback) {
-    $('#confirmModal').show();
+    $('#confirmModal').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $('#confirmModal #confirmModalLabel').text(title || "确认");
     $('#confirmModal .modal-body').text(msg);
 
@@ -30,6 +36,15 @@ window.showConfirm = function (msg, title, hidecallback) {
 $(document).ready(function () {
     $("#btnAsk").click(function (e) {
         location.replace("/ask");
+    });
+
+    $("#btnSearch").click(function (e) {
+        var q = $.trim($("#txtSearch").val());
+        if (q.length > 2) {
+            location.replace("/?q=" + q);
+        } else {
+            showAlert("搜索字数不能少于3个");
+        }
     });
 });
 

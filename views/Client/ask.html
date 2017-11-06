@@ -1,22 +1,23 @@
 {% extends "Client/partial/main.html" %} {% block main %}
 <div class="content ask">
     <form id="askForm" method="post" action="/ask">
+        <input type="hidden" id="id" value="{{ id }}">
         <div class="row">
             <div class="col-md-24">
                 <div class="form-group">
                     <label for="name" class="control-label">问题标题:</label>
-                    <input type="text" maxlength="50" class="form-control" name="name" id="name">
+                    <input type="text" maxlength="50" class="form-control" name="name" id="name" value="{{ question.title }}">
                 </div>
             </div>
             <div class="col-md-24">
                 <div class="form-group">
                     <label for="content" class="control-label">问题内容:</label>
-                    <textarea maxlength="1000" id="content" name="content" placeholder="选填，详细说明您的问题，以便获得更好的答案" style="height: 78px;"></textarea>
+                    <textarea maxlength="1000" id="content" name="content" placeholder="选填，详细说明您的问题，以便获得更好的答案" style="height: 78px;">{{ question.content }}</textarea>
                 </div>
             </div>
             <div class="col-md-24">
                 <div class="form-group">
-                    <button type="submit" class="pull-right btn btn-large btn-primary">提交</button>
+                    <button id="btnSubmit" class="pull-right btn btn-large btn-primary">提交</button>
                 </div>
             </div>
         </div>

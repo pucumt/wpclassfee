@@ -1,13 +1,15 @@
 var model = require("../../model.js"),
     pageSize = model.db.config.pageSize,
     crypto = require('crypto'),
+    auth = require("./auth.js"),
     User = model.ws_user;
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
         res.render('Client/index.html', {
             user: req.session.user,
-            websiteTitle: model.db.config.websiteTitle
+            websiteTitle: model.db.config.websiteTitle,
+            search: req.query.q
         });
     });
 
@@ -43,5 +45,13 @@ module.exports = function (app) {
                 req.session.user = user;
                 res.redirect('/'); //登陆成功后跳转到主页
             });
+    });
+
+    app.get('/personal', auth.checkLogin)
+    app.get('/personal', function (req, res) {
+        res.render('Client/personal.questionList.html', {
+            user: req.session.user,
+            websiteTitle: model.db.config.websiteTitle
+        });
     });
 }

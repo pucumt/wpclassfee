@@ -3,7 +3,8 @@ const db = require('../../db'),
 
 const Comment = db.defineModel('comments', {
     qid: db.STRING(32), // 问题id
-    content: db.STRING(1000)
+    content: db.STRING(1000),
+    createdName: db.STRING(50)
 });
 module.exports = Comment;
 

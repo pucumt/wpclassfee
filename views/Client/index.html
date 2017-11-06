@@ -2,21 +2,11 @@
 <div class="content">
     <div class="row">
         <ul class="ul-content">
-            <li>
-                <div class="title-section clearfix">
-                    <div class="title">
-                        <a href="111">成都垣坤装饰怎么样</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="title-section clearfix">
-                    <div class="title">
-                        <a href="111">成都垣坤装饰怎么样</a>
-                    </div>
-                </div>
-            </li>
         </ul>
+    </div>
+    <div id="mainModal">
+        <input type="hidden" id="total" value="0" />
+        <input type="hidden" id="page" value="0" /> {% include "Client/partial/paging.html" %}
     </div>
 </div>
 {% endblock %} {% block modal %}

@@ -30,7 +30,7 @@ Question.getFilters = function (filter) {
     return Question.findAll({
         'where': filter,
         order: [
-            ['createdDate'],
+            ['createdDate', 'DESC'],
             ['_id']
         ]
     });
@@ -41,10 +41,23 @@ Question.getFiltersWithPage = function (page, filter) {
     return Question.findAndCountAll({
         'where': filter,
         order: [
-            ['createdDate'],
+            ['createdDate', 'DESC'],
             ['_id']
         ],
         offset: config.pageSize * (page - 1),
         limit: config.pageSize
+    });
+};
+
+Question.getFiltersWithPageClient = function (page, filter) {
+    filter.isDeleted = false;
+    return Question.findAndCountAll({
+        'where': filter,
+        order: [
+            ['createdDate', 'DESC'],
+            ['_id']
+        ],
+        offset: config.clientSize * (page - 1),
+        limit: config.clientSize
     });
 };

@@ -5,7 +5,9 @@ $(document).ready(function () {
 var $selectBody = $('.content .ul-content');
 
 function search(p) {
-    var filter = {},
+    var filter = {
+            q: $("#txtSearch").val()
+        },
         pStr = p ? "p=" + p : "";
     $selectBody.empty();
     selfAjax("post", "/ask/search?" + pStr, filter, function (data) {
@@ -18,5 +20,9 @@ function search(p) {
             });
             $selectBody.append(d);
         }
+
+        $("#mainModal #total").val(data.total);
+        $("#mainModal #page").val(data.page);
+        setPaging("#mainModal", data);
     });
 };
