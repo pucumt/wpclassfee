@@ -119,7 +119,7 @@ gulp.task('compressHtml', ['compressJs'], function () {
 
 gulp.task('compressNode', ['compressHtml'], function (cb) {
     pump([
-            gulp.src(['settings.js', 'model.js', 'db.js', 'app.js', 'routes/**/*.js', 'models/**/*.js'], {
+            gulp.src(['settings.js', 'model.js', 'db.js', 'app.js', 'init-db.js', 'routes/**/*.js', 'models/**/*.js'], {
                 base: '.'
             }),
             minify({}),
