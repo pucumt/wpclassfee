@@ -7,7 +7,7 @@ var option = {
     password: 'root',
     pageSize: 14,
     clientSize: 30,
-    websiteTitle: "百分百教育"
+    websiteTitle: "都市岛"
 };
 // if (process.env.NODE_ENV == "development") {
 //     option.root = "";
