@@ -1,0 +1,1 @@
+const fs=require("fs"),db=require("./db");let files=fs.readdirSync(__dirname+"/models/mysql"),js_files=files.filter(e=>e.endsWith(".js"),files);module.exports={models:[]};for(let e of js_files){let s=e.substring(0,e.length-3);module.exports[s]=require("./models/mysql/"+e),module.exports.models.push(s)}module.exports.sync=(()=>db.sync()),module.exports.db=db;

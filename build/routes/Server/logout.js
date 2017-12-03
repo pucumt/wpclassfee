@@ -1,0 +1,1 @@
+var auth=require("./auth"),checkLogin=auth.checkLogin;module.exports=function(n){n.get("/admin/logout",function(n,i){n.session.admin?n.session.admin=null:n.session.adminRollCall&&(n.session.adminRollCall=null),i.redirect("/admin/login")})};

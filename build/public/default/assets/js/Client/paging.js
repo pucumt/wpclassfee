@@ -1,0 +1,1 @@
+var setPaging=function(a,g){var t=parseInt($(a+" #total").val()),e=parseInt($(a+" #page").val()),i=Math.ceil(t/14);$(a+" .paging .total").text(t.toString()),$(a+" .paging .page").text(e.toString()+"/"+i.toString()),g.isFirstPage?$(a+" .paging .prepage").hide():$(a+" .paging .prepage").show(),g.isLastPage?$(a+" .paging .nextpage").hide():$(a+" .paging .nextpage").show()};

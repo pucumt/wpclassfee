@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#left_btnQuestion").on("click",function(n){location.href="/admin/questionList"}),$(".admin-nav .menu-top #header_btnQuestion").addClass("active")});

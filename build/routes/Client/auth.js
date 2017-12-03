@@ -1,0 +1,1 @@
+module.exports={checkLogin:function(o,e,i){if(!o.session.user)return"GET"==o.method?void e.redirect("/login"):void e.jsonp({error:"not login"});i()}};

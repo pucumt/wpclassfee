@@ -1,0 +1,1 @@
+var user=require("./user.js"),question=require("./question.js");module.exports=function(e){user(e),question(e)};

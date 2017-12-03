@@ -1,0 +1,1 @@
+var option={cookieSecret:"wpqa",db:"wpqa",host:"127.0.0.1",port:"10105",username:"root",password:"root",pageSize:14,clientSize:30,websiteTitle:"都市岛"};module.exports=option;

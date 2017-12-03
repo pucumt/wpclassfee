@@ -1,0 +1,1 @@
+$(document).ready(function(){var t=parseInt($("#total").val()),a=parseInt($("#page").val()),n=Math.ceil(t/14);$(".paging .total").text(t.toString()),$(".paging .page").text(a.toString()+"/"+n.toString())});

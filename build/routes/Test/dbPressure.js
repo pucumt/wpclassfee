@@ -1,0 +1,1 @@
+var Grade=require("../../models/grade.js");module.exports=function(e){e.get("/dbPressure",function(e,s){s.render("Test/dbPressure.html",{title:"数据库压力测试"})}),e.post("/dbPressure",function(e,s){Grade.getAll(null,1,{},function(r,t,n){r&&(t=[]),s.jsonp({title:"测试成功",user:e.session.admin,grades:t,counts:e.body.counts})})})};

@@ -1,0 +1,1 @@
+var client=require("./Client/index.js"),server=require("./Server/index.js"),generator=require("./Test/generator.js"),settings=require("../settings");module.exports=function(e){client(e),server(e),generator(e),e.use(function(e,r){r.render("404.html",{websiteTitle:settings.websiteTitle})})};
