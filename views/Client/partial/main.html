@@ -24,15 +24,15 @@
                     <input type="text" id="txtSearch" value="{{ search }}" class="form-control" placeholder="Search for...">
                     <button class="btn btn-default" id="btnSearch" type="button">搜索</button>
                 </div>
-                <div class="question pull-left">
-                    <button class="btn btn-default" id="btnAsk" type="button">提问</button>
-                </div>
-                <div class="userinfo pull-right">
+                <div class="userinfo pull-right" style="margin-left:20px;">
                     {% if user %}
                     <a href="/personal" style="margin-right:20px;">个人中心</a>用户: {{ user.name }}
                     <a href="/logout" style="margin-left:20px;">退出</a>
                     {% else %}
                     <a href="/login">登录</a> {% endif %}
+                </div>
+                <div class="question pull-right">
+                    <button class="btn btn-default" id="btnAsk" type="button">提问</button>
                 </div>
             </div>
         </header>
