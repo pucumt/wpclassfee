@@ -3,7 +3,7 @@ const db = require('../../db'),
 
 const Question = db.defineModel('questions', {
     title: db.STRING(50),
-    content: db.STRING(1000),
+    content: db.STRING,
     answer: db.STRING(1000),
     isChecked: { // only isChecked==1 will show in index, 0 is default 9 is refused
         type: db.INTEGER,

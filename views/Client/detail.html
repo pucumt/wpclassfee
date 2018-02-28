@@ -8,30 +8,6 @@
         <div class="col-md-24">
             <div class="question"></div>
         </div>
-        <!-- <div class="answer"></div> -->
-    </div>
-    <div class="row comments">
-        <div class="col-md-24">
-            <div class="title">所有评论：</div>
-            <ul class="list">
-            </ul>
-        </div>
-        <div class="col-md-24">
-            <div class="form-group tocomment">
-                <label for="content" class="control-label">发表评论:</label>
-                <textarea maxlength="1000" id="content" name="content" placeholder="请填写5字以上的评论" style="height: 78px;"></textarea>
-            </div>
-        </div>
-        <div class="col-md-24">
-            <div class="form-group">
-                {% if user %}
-                <label class="msg"></label>
-                <button id="btnSubmit" class="pull-right btn btn-large btn-primary">提交评论</button>
-                {% else %}
-                <label>登录后才能评论</label>
-                {% endif %}
-            </div>
-        </div>
     </div>
 </div>
 {% endblock %} {% block modal %}

@@ -15,14 +15,20 @@ function search(p) {
         var d = $(document.createDocumentFragment());
         if (data && data.questions.length > 0) {
             data.questions.forEach(function (trainOrder) {
-                var $tr = $('<li><div class="title-section clearfix"><div class="title"><a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div></div></li>');
-                d.append($tr);
+                d.append(rendDetail(trainOrder));
             });
             $selectBody.append(d);
         }
-
-        $("#mainModal #total").val(data.total);
-        $("#mainModal #page").val(data.page);
-        setPaging("#mainModal", data);
     });
 };
+
+function rendDetail(trainOrder) {
+    var $li = $('<li></li>'),
+        $title = $('<div class="title-section clearfix"><div class="title"><a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div></div>'),
+        $content = $('<div class="content-section clearfix"><div class="content">' + marked(trainOrder.content) + '</div></div>');
+
+    $li.append($title);
+    $li.append($content);
+
+    return $li;
+}

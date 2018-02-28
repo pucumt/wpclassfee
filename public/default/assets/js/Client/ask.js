@@ -10,7 +10,7 @@ $(document).ready(function () {
                 trigger: "blur change",
                 validators: {
                     notEmpty: {
-                        message: '问题标题不能为空'
+                        message: '作文标题不能为空'
                     }
                 }
             }

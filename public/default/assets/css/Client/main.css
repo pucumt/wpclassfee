@@ -122,7 +122,6 @@ header {
     margin-left: 10px;
 }
 
-
 /* .header-content .search .form-control {} */
 
 .header-content .search .btn {
@@ -133,12 +132,19 @@ header {
     top: 0;
 }
 
-
 /* 
 .container .content ul.ul-content {
      border-top: 1px solid #ddd;
     margin-top: 40px; 
 } */
+
+.container .content ul.ul-content {
+    width: 800px;
+}
+
+.container .content ul.ul-content .content {
+    width: 800px;
+}
 
 .container .content ul.ul-content li {
     border-bottom: 1px solid #eee;
