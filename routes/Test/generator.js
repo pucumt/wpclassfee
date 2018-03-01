@@ -26,6 +26,12 @@ function readFile(file1, file2, callback) {
 
 
 module.exports = function (app) {
+    app.get('/math', function (req, res) {
+        res.render('Test/mathPractice.html', {
+            title: '10以内加法练习'
+        });
+    });
+
     app.get('/generator', function (req, res) {
         res.render('Test/generator.html', {
             title: '自动生成'

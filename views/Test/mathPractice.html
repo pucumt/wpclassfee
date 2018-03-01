@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>百分百</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        var wrongList, a, b, o, r, right = 0,
+            wrong = 0,
+            total = 10;
+
+        function generate() {
+            o = Math.round(Math.random());
+            a = Math.round(Math.random() * 9);
+            b = (o == 0 ? Math.round(Math.random() * 9) : Math.round(Math.random() * a));
+            r = (o == 0 ? a + b : a - b);
+            var result = a + (o == 0 ? "+" : "-") + b;
+            $(".math .mbody").text(result);
+            return result;
+        };
+
+        $(".next").on("click", function (e) {
+            if (r == $(".math .mresult").text()) {
+                right++;
+            } else {
+                wrong++;
+            }
+            $(".title .score .right").text(right);
+            $(".title .score .wrong").text(wrong);
+            total--;
+            if (total == 0) {
+                window.alert("你已全部完成了");
+                return;
+            }
+
+            generate();
+        });
+
+        generate();
+    });
+</script>
+
+<body>
+    <div class="title">
+        <div class="number">剩余10道题</div>
+        <div class="score">
+            <span class="right">正确：</span>
+            <span class="wrong">错误：</span>
+        </div>
+    </div>
+    <div class="math">
+        <div class="">
+            <span class="mbody">
+            </span>=
+            <span class="mresult">
+                6
+            </span>
+        </div>
+    </div>
+    <div class="next">
+        下一题
+    </div>
+    <div>9格数字</div>
+</body>
+
+</html>
