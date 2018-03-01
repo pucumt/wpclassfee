@@ -1,23 +1,37 @@
 $(document).ready(function () {
-    search();
+    search(curPage);
+
+    $(window).scroll(function () {
+        // console.log($(document).scrollTop());
+        // console.log($(document).height() - $(window).height());
+        if (Math.round($(document).scrollTop()) >= $(document).height() - $(window).height()) {
+            // alert("滚动条已经到达底部为" + $(document).scrollTop());
+            curPage++;
+            search(curPage);
+        }
+    });
 });
 
-var $selectBody = $('.content .ul-content');
+var curPage = 1,
+    $selectBody = $('.content .ul-content');
 
 function search(p) {
     var filter = {
             q: $("#txtSearch").val()
         },
         pStr = p ? "p=" + p : "";
-    $selectBody.empty();
+    // $selectBody.empty();
     selfAjax("post", "/ask/search?" + pStr, filter, function (data) {
-        $selectBody.empty();
+        // $selectBody.empty();
         var d = $(document.createDocumentFragment());
         if (data && data.questions.length > 0) {
             data.questions.forEach(function (trainOrder) {
                 d.append(rendDetail(trainOrder));
             });
             $selectBody.append(d);
+        }
+        if (data.isLastPage) {
+            $(window).off("scroll");
         }
     });
 };

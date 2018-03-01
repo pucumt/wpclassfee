@@ -6,7 +6,7 @@ var option = {
     username: 'root',
     password: 'root',
     pageSize: 14,
-    clientSize: 30,
+    clientSize: 20,
     websiteTitle: "都市岛"
 };
 // if (process.env.NODE_ENV == "development") {
