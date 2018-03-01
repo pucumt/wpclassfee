@@ -23,7 +23,7 @@ function search(p) {
 };
 
 function rendDetail(trainOrder) {
-    var $li = $('<li></li>'),
+    var $li = $('<li class="contentDetail"></li>'),
         $title = $('<div class="title-section clearfix"><div class="title"><a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div></div>'),
         $content = $('<div class="content-section clearfix"><div class="content">' + marked(trainOrder.content) + '</div></div>');
 

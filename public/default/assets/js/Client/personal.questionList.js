@@ -33,7 +33,7 @@ function search(p) {
         var d = $(document.createDocumentFragment());
         if (data && data.questions.length > 0) {
             data.questions.forEach(function (trainOrder) {
-                var $tr = $('<li><div class="title-section clearfix"><div class="title">' + getStatus(trainOrder.isChecked) + '<a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div><div><span id="btnEdit">修改</span></div></div></li>');
+                var $tr = $('<li class="contentDetail"><div class="title-section clearfix"><div class="title">' + getStatus(trainOrder.isChecked) + '<a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div><div><span id="btnEdit">修改</span></div></div></li>');
                 $tr.data("obj", trainOrder);
                 d.append($tr);
             });

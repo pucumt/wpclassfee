@@ -16,9 +16,9 @@ footer {
     padding: 20px;
 }
 
-ul,
-ol,
-li {
+ul.ul-content,
+ol.ol-content,
+li.contentDetail {
     list-style: none;
 }
 
@@ -49,6 +49,91 @@ th,
 td {
     margin: 0;
     padding: 0;
+}
+
+table {
+    *border-collapse: collapse;
+    /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+}
+
+table {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    /*-webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;   */
+}
+
+table tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+table td,
+.table th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image: -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+    /*-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;*/
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    padding: 5px;
+}
+
+table td:first-child,
+table th:first-child {
+    border-left: none;
+}
+
+table th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+table th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+table th:only-child {
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+table tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+table tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
 }
 
 @media (min-width: 360px) {
@@ -146,17 +231,17 @@ header {
     width: 800px;
 }
 
-.container .content ul.ul-content li {
+.container .content ul.ul-content li.contentDetail {
     border-bottom: 1px solid #eee;
     position: relative;
     padding: 5px 0;
 }
 
-.container .content ul.ul-content li:hover {
+.container .content ul.ul-content li.contentDetail:hover {
     background-color: #f4fef6;
 }
 
-.container .content ul.ul-content li .title {
+.container .content ul.ul-content li.contentDetail .title {
     white-space: nowrap;
     margin: 10px 20px 10px 10px;
     height: 16px;
@@ -209,7 +294,7 @@ header {
     padding-bottom: 15px;
 }
 
-.question.content .comments li {
+.question.content .comments li.contentDetail {
     border-bottom: 1px solid #eee;
     padding: 12px 0;
     font-size: 14px;
@@ -219,7 +304,7 @@ header {
     margin-top: 30px;
 }
 
-.question.content .comments li .title {
+.question.content .comments li.contentDetail .title {
     border-bottom: 0;
     font-size: 12px;
     padding-bottom: 15px;
@@ -232,13 +317,13 @@ header {
     border-right: 1px solid #ddd;
 }
 
-.personal.content .left li {
+.personal.content .left li.contentDetail {
     background-color: #f4fef6;
     border-bottom: 1px solid #ddd;
     margin-left: -20px;
 }
 
-.personal.content .left li:hover {
+.personal.content .left li.contentDetail:hover {
     cursor: pointer;
 }
 
@@ -249,17 +334,17 @@ header {
     float: right;
 }
 
-.personal.content .main .ul-content li .title .status {
+.personal.content .main .ul-content li.contentDetail .title .status {
     margin-right: 10px;
     color: #F59701;
 }
 
-.personal.content .main .ul-content li #btnEdit {
+.personal.content .main .ul-content li.contentDetail #btnEdit {
     margin: 10px 20px 10px 10px;
     height: 16px;
     float: right;
 }
 
-.personal.content .main .ul-content li #btnEdit:hover {
+.personal.content .main .ul-content li.contentDetail #btnEdit:hover {
     cursor: pointer;
 }
