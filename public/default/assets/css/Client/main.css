@@ -141,6 +141,19 @@ header {
     background-color: #f60;
 }
 
+.header-content {
+    padding: 0 5px;
+}
+
+.header-content .logo {
+    width: 100%;
+    text-align: center;
+}
+
+.header-content .logo a:hover {
+    text-decoration: none;
+}
+
 .header-content .search {
     width: 100%;
     position: relative;
@@ -164,6 +177,7 @@ header {
 .question.content .detail {
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .container .content ul.ul-content li .content,
@@ -185,6 +199,13 @@ header {
     }
     header {
         height: 46px;
+    }
+    .header-content {
+        padding: 0;
+    }
+    .header-content .logo {
+        width: auto;
+        text-align: left;
     }
     .header-content .search {
         width: 400px;
@@ -215,10 +236,6 @@ header {
     .header-content {
         width: 960px;
     }
-}
-
-.header-content .logo a:hover {
-    text-decoration: none;
 }
 
 .content-body {
