@@ -5,24 +5,10 @@ $(document).ready(function () {
     $("#header_btnQuestion").on("click", function (e) {
         location.href = "/admin/questionList";
     });
-    $("#header_btnStudent").on("click", function (e) {
-        location.href = "/admin/studentAccountList";
-    });
-    $("#header_btnFinancial").on("click", function (e) {
-        location.href = "/admin/schoolReportList";
-    });
     $("#header_btnBasic").on("click", function (e) {
         location.href = "/admin/schoolAreaList";
     });
-    $("#header_btnEnrollExam").on("click", function (e) {
-        location.href = "/admin/adminEnrollExamList";
-    });
-    $("#header_btnRollCall").on("click", function (e) {
-        location.href = "/admin/adminRollCallList";
-    });
-    $("#header_btnBook").on("click", function (e) {
-        location.href = "/admin/adminBookList";
-    });
+
 });
 
 window.getTrainOrderStatus = function (isSucceed) {

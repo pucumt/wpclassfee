@@ -31,6 +31,8 @@
                 <div class="question pull-right">
                     {% if user %}
                     <button class="btn btn-default" id="btnAsk" type="button">提问</button>
+                    <a href="/personal" style="margin-right:20px;">个人中心</a>用户: {{ user.name }}
+                    <a href="/logout" style="margin-left:20px;">退出</a>
                     {% endif %}
                 </div>
             </div>

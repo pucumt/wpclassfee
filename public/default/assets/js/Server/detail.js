@@ -8,7 +8,7 @@ function getContent() {
     var filter = {
         id: $("#id").val()
     };
-    selfAjax("post", "/question", filter, function (data) {
+    selfAjax("post", "/admin/question", filter, function (data) {
         if (data) {
             var option = {
                 highlight: function (code) {

@@ -13,6 +13,14 @@ $(document).ready(function () {
                         message: '作文标题不能为空'
                     }
                 }
+            },
+            author: {
+                trigger: "blur change",
+                validators: {
+                    notEmpty: {
+                        message: '作者不能为空'
+                    }
+                }
             }
         }
     });
@@ -24,6 +32,7 @@ $(document).ready(function () {
             var filter = {
                 id: $("#id").val(),
                 name: $("#name").val(),
+                author: $("#author").val(),
                 content: $("#content").val()
             };
             selfAjax("post", "/ask", filter, function (data) {

@@ -33,7 +33,7 @@ function searchOrder(p) {
             var d = $(document.createDocumentFragment());
             data.questions.forEach(function (trainOrder) {
                 var $tr = $('<tr id=' + trainOrder._id + '><td>' + trainOrder.createdName + '</td><td class="train" id="' + trainOrder._id +
-                    '">' + trainOrder.title + '</td><td>' + moment(trainOrder.updatedDate).format("YYYY-MM-DD HH:mm") + '</td><td><div class="btn-group">' + getButtons(trainOrder.isChecked) + '</div></td></tr>');
+                    '"><a href=/admin/question/' + trainOrder._id + ' target="_blank">' + trainOrder.title + '</a></td><td>' + moment(trainOrder.updatedDate).format("YYYY-MM-DD HH:mm") + '</td><td><div class="btn-group">' + getButtons(trainOrder.isChecked) + '</div></td></tr>');
                 $tr.find(".btn-group").data("obj", trainOrder);
                 d.append($tr);
             });

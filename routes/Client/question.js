@@ -32,7 +32,10 @@ module.exports = function (app) {
         if (req.body.id) {
             // edit
             Question.update({
-                    content: req.body.content
+                    author: req.body.author,
+                    content: req.body.content,
+                    updatedDate: new Date(),
+                    deletedBy: req.session.user._id
                 }, {
                     where: {
                         _id: req.body.id
@@ -45,6 +48,7 @@ module.exports = function (app) {
             // create
             Question.create({
                     title: req.body.name,
+                    author: req.body.author,
                     content: req.body.content,
                     answer: "",
                     createdBy: req.session.user._id,

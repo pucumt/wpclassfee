@@ -11,8 +11,14 @@
             </div>
             <div class="col-md-24">
                 <div class="form-group">
+                    <label for="author" class="control-label">作者信息:</label>
+                    <textarea maxlength="1000" id="author" name="author" placeholder="必填，详细填写作者和点评老师" style="height: 78px;">{{ question.author }}</textarea>
+                </div>
+            </div>
+            <div class="col-md-24">
+                <div class="form-group">
                     <label for="content" class="control-label">作文内容:</label>
-                    <textarea maxlength="20000" id="content" name="content" placeholder="选填，详细填写作者作文内容和点评" style="height: 78px;">{{ question.content }}</textarea>
+                    <textarea maxlength="20000" id="content" name="content" placeholder="选填，详细填写作者作文内容和点评" style="height: 300px;">{{ question.content }}</textarea>
                 </div>
             </div>
             <div class="col-md-24">

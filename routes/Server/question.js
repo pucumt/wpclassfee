@@ -87,4 +87,25 @@ module.exports = function (app) {
                 });
             });
     });
+
+    app.get('/admin/question/:id', auth.checkLogin)
+    app.get('/admin/question/:id', auth.checkSecure([100]));
+    app.get('/admin/question/:id', function (req, res) {
+        res.render('Server/detail.html', {
+            user: req.session.user,
+            websiteTitle: model.db.config.websiteTitle,
+            id: req.params.id
+        });
+    });
+
+    app.post('/admin/question', auth.checkLogin);
+    app.post('/admin/question', auth.checkSecure([100]));
+    app.post('/admin/question', function (req, res) {
+        Question.getFilter({
+                _id: req.body.id
+            })
+            .then(function (question) {
+                res.jsonp(question);
+            });
+    });
 }
