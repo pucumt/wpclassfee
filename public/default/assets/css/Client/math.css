@@ -1,0 +1,58 @@
+.title,
+.result.row {
+    margin: 0 0;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f7f7f9;
+}
+
+.result.row {
+    border-top: 1px solid #C8C8CD;
+    border-bottom: 1px solid #C8C8CD;
+    padding: 0;
+}
+
+.result.row .number,
+.result.row .score .col-6 {
+    padding: 10px 0;
+}
+
+.result.row .score .col-6:first-child {
+    background-color: #28a745;
+}
+
+.result.row .score .col-6:last-child {
+    background-color: #dc3545;
+}
+
+.math .detail {
+    margin: 30px auto;
+    padding: 15px 0;
+    width: 150px;
+    text-align: center;
+    border: 1px solid #C8C8CD;
+    min-height: 62px;
+}
+
+.math .mresult {
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.numTable .row {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #C8C8CD;
+}
+
+.numTable .row .col-4 {
+    border-right: 1px solid #C8C8CD;
+    padding: 10px 0;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.numTable .row .col-4:last-child {
+    border-right: 0;
+}

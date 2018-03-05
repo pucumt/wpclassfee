@@ -3,68 +3,66 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>百分百</title>
+    <link rel="stylesheet" href="/default/assets/css/Client/math.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/default/assets/js/Client/math.js"></script>
 </head>
-<script>
-    $(document).ready(function () {
-        var wrongList, a, b, o, r, right = 0,
-            wrong = 0,
-            total = 10;
-
-        function generate() {
-            o = Math.round(Math.random());
-            a = Math.round(Math.random() * 9);
-            b = (o == 0 ? Math.round(Math.random() * 9) : Math.round(Math.random() * a));
-            r = (o == 0 ? a + b : a - b);
-            var result = a + (o == 0 ? "+" : "-") + b;
-            $(".math .mbody").text(result);
-            return result;
-        };
-
-        $(".next").on("click", function (e) {
-            if (r == $(".math .mresult").text()) {
-                right++;
-            } else {
-                wrong++;
-            }
-            $(".title .score .right").text(right);
-            $(".title .score .wrong").text(wrong);
-            total--;
-            if (total == 0) {
-                window.alert("你已全部完成了");
-                return;
-            }
-
-            generate();
-        });
-
-        generate();
-    });
-</script>
 
 <body>
-    <div class="title">
-        <div class="number">剩余10道题</div>
-        <div class="score">
-            <span class="right">正确：</span>
-            <span class="wrong">错误：</span>
+    <div class="title">10以内加减法</div>
+    <div class="row result">
+        <div class="col-4">
+            <div class="number">剩余
+                <span>10</span>道题</div>
+        </div>
+        <div class="col-8">
+            <div class="score row">
+                <div class="col-6">
+                    正确：
+                    <span class="right">0</span>
+                </div>
+                <div class="col-6">
+                    错误：
+                    <span class="wrong">0</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="math">
-        <div class="">
-            <span class="mbody">
-            </span>=
-            <span class="mresult">
-                6
-            </span>
+        <div class="detail">
+            <span class="mbody"></span>=
+            <span class="mresult"> </span>
         </div>
     </div>
-    <div class="next">
+    <div class="next weui-btn weui-btn_plain-primary">
         下一题
     </div>
-    <div>9格数字</div>
+    <div class="numTable">
+        <div class="row">
+            <div class="col-4">1</div>
+            <div class="col-4">2</div>
+            <div class="col-4">3</div>
+        </div>
+        <div class="row">
+            <div class="col-4">4</div>
+            <div class="col-4">5</div>
+            <div class="col-4">6</div>
+        </div>
+        <div class="row">
+            <div class="col-4">7</div>
+            <div class="col-4">8</div>
+            <div class="col-4">9</div>
+        </div>
+        <div class="row">
+            <div class="col-4">&sdot;</div>
+            <div class="col-4">0</div>
+            <div class="col-4">X</div>
+        </div>
+    </div>
 </body>
 
 </html>
