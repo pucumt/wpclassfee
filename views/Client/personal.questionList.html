@@ -1,11 +1,8 @@
 {% extends "Client/partial/main.html" %} {% block main %}
 <div class="content personal">
-    <div class="left pull-left">
-        {% include "Client/partial/personal.menu.html" %}
-    </div>
     <div class="main">
         <div class="row">
-            <ul class="ul-content">
+            <ul class="ul-content list-content">
             </ul>
         </div>
         <div id="mainModal">
@@ -13,6 +10,10 @@
             <input type="hidden" id="page" value="0" /> {% include "Client/partial/paging.html" %}
         </div>
     </div>
+    <div class="left">
+        {% include "Client/partial/personal.menu.html" %}
+    </div>
+    <div class="clearfix"></div>
 </div>
 {% endblock %} {% block modal %}
 <script type="text/javascript" src="/default/assets/js/Client/personal.questionList.js"></script>

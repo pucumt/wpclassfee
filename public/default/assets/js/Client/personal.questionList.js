@@ -1,7 +1,7 @@
 $(document).ready(function () {
     search();
 
-    $(".content .ul-content").on("click", "li #btnEdit", function (e) {
+    $(".content .main .ul-content").on("click", "li #btnEdit", function (e) {
         var obj = $(e.target).parents("li").data("obj"),
             id = obj._id;
         location.replace("/ask/" + id);
@@ -22,7 +22,7 @@ function getStatus(isChecked) {
     }
 };
 
-var $selectBody = $('.content .ul-content');
+var $selectBody = $('.content .main .ul-content');
 
 function search(p) {
     var filter = {},
@@ -33,7 +33,7 @@ function search(p) {
         var d = $(document.createDocumentFragment());
         if (data && data.questions.length > 0) {
             data.questions.forEach(function (trainOrder) {
-                var $tr = $('<li class="contentDetail"><div class="title-section clearfix"><div class="title">' + getStatus(trainOrder.isChecked) + '<a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div><div><span id="btnEdit">修改</span></div></div></li>');
+                var $tr = $('<li class="contentDetail"><div class="title-section"><div class="title">' + getStatus(trainOrder.isChecked) + '<a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div><div><span class="btn_link" id="btnEdit">修改</span></div></div></li>');
                 $tr.data("obj", trainOrder);
                 d.append($tr);
             });

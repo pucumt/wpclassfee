@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #e5e4da;
 }
 
 header,
@@ -8,11 +8,11 @@ footer,
 .header-content {
     margin: 0 auto;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 footer {
-    border-top: 1px solid gray;
+    border-top: 1px solid #ccc;
     padding: 20px;
 }
 
@@ -138,7 +138,7 @@ table tr:last-child td:last-child {
 
 header {
     height: 86px;
-    background-color: #f60;
+    /* background-color: #f60; */
 }
 
 .header-content {
@@ -152,6 +152,7 @@ header {
 
 .header-content .logo a:hover {
     text-decoration: none;
+    color: #f60;
 }
 
 .header-content .search {
@@ -167,9 +168,9 @@ header {
 }
 
 .header-content {
-    background-color: #f60;
-    color: #fff;
-    font-size: 30px;
+    /* background-color: #f60; */
+    color: #8d6e63;
+    font-size: 20px;
     line-height: 46px;
 }
 
@@ -248,7 +249,7 @@ header {
 }
 
 .header-content a {
-    color: #fff;
+    color: #8d6e63;
 }
 
 .header-content .userinfo {
@@ -358,13 +359,11 @@ header {
 
 .personal.content .left {
     width: 150px;
-    height: 100vh;
-    border-right: 1px solid #ddd;
 }
 
 .personal.content .left li.contentDetail {
-    background-color: #f4fef6;
-    border-bottom: 1px solid #ddd;
+    /* background-color: #f4fef6; */
+    /* border-bottom: 1px solid #ddd; */
     margin-left: -20px;
 }
 
@@ -373,10 +372,10 @@ header {
 }
 
 .personal.content .main {
-    margin-left: 30px;
-    margin-right: -20px;
+    padding-left: 30px;
     width: 760px;
     float: right;
+    border-left: 1px solid #ddd;
 }
 
 .personal.content ul.ul-content {
@@ -384,24 +383,32 @@ header {
     margin: 0 0;
 }
 
-.personal.content .main .ul-content li.contentDetail .title {
+.personal.content ul.list-content li.contentDetail .title-section {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.personal.content ul.list-content li.contentDetail .title {
     font-size: 14px;
     font-weight: normal;
     text-align: left;
-    float: left;
+    margin: 0;
+    /* float: left; */
 }
 
-.personal.content .main .ul-content li.contentDetail .title .status {
+.personal.content ul.list-content li.contentDetail .title .status {
     margin-right: 10px;
     color: #F59701;
 }
 
-.personal.content .main .ul-content li.contentDetail #btnEdit {
-    margin: 10px 20px 10px 10px;
-    height: 16px;
-    float: right;
+#per_Question {
+    border-bottom: 0;
 }
 
-.personal.content .main .ul-content li.contentDetail #btnEdit:hover {
+.btn_link:hover {
     cursor: pointer;
+    color: #f60;
+    text-decoration: underline;
 }
