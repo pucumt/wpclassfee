@@ -22,6 +22,7 @@ li.contentDetail {
     list-style: none;
 }
 
+/* 
 body,
 h1,
 h2,
@@ -49,7 +50,7 @@ th,
 td {
     margin: 0;
     padding: 0;
-}
+} */
 
 table {
     *border-collapse: collapse;
