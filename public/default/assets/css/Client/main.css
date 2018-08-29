@@ -301,7 +301,7 @@ header {
 
 .container .content ul.ul-content li.contentDetail .title,
 .question.content .detail .title {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin: 10px 0;
     font-size: 28px;
     font-weight: 700;

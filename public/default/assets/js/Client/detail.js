@@ -26,7 +26,7 @@ function getContent() {
             };
             $(".content .detail .title").text(data.title);
             $(".content .detail .author").html(marked(data.author, option));
-            $(".content .detail .question").html(marked(data.content, option));
+            $(".content .detail .question-content").html(marked(data.content, option));
         }
     });
 };

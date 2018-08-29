@@ -24,7 +24,7 @@ function getContent() {
                 smartypants: false,
                 xhtml: false
             };
-            $(".content .detail .question").html(marked(data.content, option));
+            $(".content .detail .question-content").html(marked(data.content, option));
         }
     });
 };
