@@ -1,0 +1,15 @@
+{% extends "Client/partial/main.html" %} {% block main %}
+<div class="content question">
+    <input type="hidden" id="catId" value="{{ catId }}">
+    <div class="row">
+        <div class="detail">
+            <div class="">
+                <div class="question"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block modal %}
+<script type="text/javascript" src="/default/assets/js/moment.min.js"></script>
+<script type="text/javascript" src="/default/assets/js/Client/catDetail.js"></script>
+{% endblock %}

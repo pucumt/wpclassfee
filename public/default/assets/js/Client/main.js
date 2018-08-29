@@ -46,7 +46,29 @@ $(document).ready(function () {
             showAlert("搜索字数不能少于3个");
         }
     });
+
+    loadCategory();
+
+    $(".question.pull-right").on("click", "a", function (e) {
+        location.href = "/category/" + $(e.currentTarget).attr("id");
+    });
 });
+
+function loadCategory() {
+    selfAjax("post", "/ask/category/searchall", null, function (data) {
+        if (data && data.length > 0) {
+            var d = $(document.createDocumentFragment());
+            data.forEach(function (category) {
+                d.append('<a href="#" id="{0}" style="margin-right:20px;">{1}</a>'.format(category._id, category.name));
+            });
+            $(".question.pull-right").append(d);
+        }
+
+        if ($("#catId").val()) {
+            $(".question.pull-right #" + $("#catId").val()).addClass("active");
+        }
+    });
+};
 
 window.selfAjax = function (method, url, filter, callback) {
     loading();

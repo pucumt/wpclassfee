@@ -18,45 +18,30 @@ function searchOrder(p) {
             var getButtons = function (isChecked) {
                 var buttons = "";
                 switch (isChecked) {
-                    case 0:
-                        buttons = '<a class="btn btn-default btnPass">通过</a><a class="btn btn-default btnRefuse">拒绝</a>';
-                        break;
                     case 1:
-                        buttons = '<a class="btn btn-default btnRefuse">拒绝</a>';
+                        buttons = '<a class="btn btn-default btnRefuse">收回</a><a class="btn btn-default btnEdit">编辑</a>';
                         break;
                     default:
-                        buttons = '<a class="btn btn-default btnPass">通过</a>';
+                        buttons = '<a class="btn btn-default btnPass">发布</a><a class="btn btn-default btnEdit">编辑</a>';
                         break;
                 }
                 return buttons;
             };
             var d = $(document.createDocumentFragment());
             data.questions.forEach(function (trainOrder) {
-                var $tr = $('<tr id=' + trainOrder._id + '><td>' + trainOrder.createdName + '</td><td class="train" id="' + trainOrder._id +
+                var $tr = $('<tr id=' + trainOrder._id + '><td class="train" id="' + trainOrder._id +
                     '"><a href=/admin/question/' + trainOrder._id + ' target="_blank">' + trainOrder.title + '</a></td><td>' + moment(trainOrder.updatedDate).format("YYYY-MM-DD HH:mm") + '</td><td><div class="btn-group">' + getButtons(trainOrder.isChecked) + '</div></td></tr>');
                 $tr.find(".btn-group").data("obj", trainOrder);
                 d.append($tr);
             });
             $selectBody.append(d);
         }
-        $("#selectModal #total").val(data.total);
-        $("#selectModal #page").val(data.page);
-        setPaging("#selectModal", data);
+        setPaging("#selectModal", data, searchOrder);
     });
 };
 
 $("#InfoSearch #btnSearch").on("click", function (e) {
     searchOrder();
-});
-
-$("#selectModal .paging .prepage").on("click", function (e) {
-    var page = parseInt($("#selectModal #page").val()) - 1;
-    searchOrder(page);
-});
-
-$("#selectModal .paging .nextpage").on("click", function (e) {
-    var page = parseInt($("#selectModal #page").val()) + 1;
-    searchOrder(page);
 });
 
 $("#gridBody").on("click", "td .btnPass", function (e) {
@@ -94,4 +79,16 @@ $("#gridBody").on("click", "td .btnRefuse", function (e) {
             }
         });
     });
+});
+
+
+$("#gridBody").on("click", "td .btnEdit", function (e) {
+    var obj = e.currentTarget;
+    var entity = $(obj).parent().data("obj");
+
+    location.href = "/admin/ask/" + entity._id;
+});
+
+$("#btnAdd").on("click", function (e) {
+    location.href = "/admin/ask";
 });

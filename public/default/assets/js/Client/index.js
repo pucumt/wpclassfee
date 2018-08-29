@@ -17,7 +17,8 @@ var curPage = 1,
 
 function search(p) {
     var filter = {
-            q: $("#txtSearch").val()
+            q: $("#txtSearch").val(),
+            catId: $("catId").val()
         },
         pStr = p ? "p=" + p : "";
     // $selectBody.empty();

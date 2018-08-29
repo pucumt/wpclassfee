@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>{{ websiteTitle }}</title>
+    <meta name="keywords" content="南通, C++, 软件开发, CCF, 信息学竞赛, 培训, 软件制作, C++学习, H5开发, 公众号, 小程序, 桌面软件, 开发">
+    <meta name="description" content="南通本地的资深IT, 从事信息学竞赛培训, 同时可接软件开发的工作, 包括管理类软件、公众号、H5、小程序、桌面软件的开发">
     <link rel="stylesheet" href="/default/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/default/assets/css/Client/main.css">
     <link rel="stylesheet" href="/default/assets/css/formValidation.css">
@@ -23,13 +25,14 @@
                     <a href="/">{{ websiteTitle }}首页</a>
                 </div>
                 <div class="userinfo pull-right" style="margin-left:20px;">
+                    <a target="_blank" style="margin-right:20px;" href="http://wpa.qq.com/msgrd?v=3&uin=793154762&site=qq&menu=yes">
+                        编程学习咨询
+                    </a>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=793154762&site=qq&menu=yes">
+                        软件咨询
+                    </a>
                 </div>
                 <div class="question pull-right">
-                    {% if user %}
-                    <button class="btn btn-default" id="btnAsk" type="button">提问</button>
-                    <a href="/personal" style="margin-right:20px;">个人中心</a>用户: {{ user.name }}
-                    <a href="/logout" style="margin-left:20px;">退出</a>
-                    {% endif %}
                 </div>
             </div>
         </header>

@@ -1,0 +1,27 @@
+{% extends "Server/partial/main.html" %} {% block left %} {% include "Server/partial/questionSetting.html" %} {% endblock
+%} {% block main %}
+<div class="title">
+    <h1>
+        菜单内容
+    </h1>
+</div>
+<div class="toolbar">
+    <div class="toolbar-list">
+        <button id="btnSave" class="btn btn-default btn-sm">保存</button>
+    </div>
+</div>
+<div class="content">
+    <input type="hidden" id="catId" value="{{ catId }}">
+    <div class="row" style="margin:15px 0;">
+        <div class="col-md-24">
+            <div class="form-group">
+                <label for="content" class="control-label" style="display:block;">文章内容:</label>
+                <textarea maxlength="20000" style="width:100%; height: 300px;" id="content" name="content" placeholder="选填，详细填写作者作文内容和点评"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block modal %}
+<script type="text/javascript" src="/default/assets/js/moment.js"></script>
+<script type="text/javascript" src="/default/assets/js/Server/articleEdit.js"></script>
+{% endblock %}

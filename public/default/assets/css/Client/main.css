@@ -258,9 +258,14 @@ header {
 }
 
 .header-content .question {
-    margin-top: -2px;
+    /* margin-top: -2px; */
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.header-content .question a.active {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* .header-content .search .form-control {} */

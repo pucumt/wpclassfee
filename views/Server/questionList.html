@@ -32,11 +32,15 @@
         </form>
     </div>
 </div>
+<div class="toolbar">
+    <div class="toolbar-list">
+        <button id="btnAdd" class="btn btn-default btn-sm">新增</button>
+    </div>
+</div>
 <div class="content">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th style="width:80px;">提问者</th>
                 <th>标题</th>
                 <th style="width:160px;">时间</th>
                 <th style="width:120px;">操作</th>
@@ -47,8 +51,7 @@
     </table>
 </div>
 <div id="selectModal">
-    <input type="hidden" id="total" value="0" />
-    <input type="hidden" id="page" value="0" /> {% include "Server/partial/popuppaging.html" %}
+    {% include "Server/partial/popuppaging.html" %}
 </div>
 {% endblock %} {% block modal %}
 <script type="text/javascript" src="/default/assets/js/moment.js"></script>

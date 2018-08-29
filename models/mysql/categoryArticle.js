@@ -1,29 +1,27 @@
 const db = require('../../db'),
     config = require('../../settings');
 
-const Question = db.defineModel('questions', {
-    title: db.STRING(50),
-    author: db.STRING(1000), //作者信息
-    content: db.TEXT,
+const CategoryArticle = db.defineModel('categoryArticles', {
     categoryId: db.STRING(50), // 文章所属类别
-    isChecked: { // only isChecked==1 will show in index, 0 is default 9 is refused
+    content: db.TEXT,
+    isChecked: { // only isChecked==1 will show in index
         type: db.INTEGER,
         defaultValue: 0
     }
 });
-module.exports = Question;
+module.exports = CategoryArticle;
 
 //读取用户信息
-Question.getFilter = function (filter) {
+CategoryArticle.getFilter = function (filter) {
     filter.isDeleted = false;
-    return Question.findOne({
+    return CategoryArticle.findOne({
         'where': filter
     });
 };
 
-Question.getFilters = function (filter) {
+CategoryArticle.getFilters = function (filter) {
     filter.isDeleted = false;
-    return Question.findAll({
+    return CategoryArticle.findAll({
         'where': filter,
         order: [
             ['createdDate', 'DESC'],
@@ -32,9 +30,9 @@ Question.getFilters = function (filter) {
     });
 };
 
-Question.getFiltersWithPage = function (page, filter) {
+CategoryArticle.getFiltersWithPage = function (page, filter) {
     filter.isDeleted = false;
-    return Question.findAndCountAll({
+    return CategoryArticle.findAndCountAll({
         'where': filter,
         order: [
             ['createdDate', 'DESC'],
@@ -45,9 +43,9 @@ Question.getFiltersWithPage = function (page, filter) {
     });
 };
 
-Question.getFiltersWithPageClient = function (page, filter) {
+CategoryArticle.getFiltersWithPageClient = function (page, filter) {
     filter.isDeleted = false;
-    return Question.findAndCountAll({
+    return CategoryArticle.findAndCountAll({
         'where': filter,
         order: [
             ['createdDate', 'DESC'],
