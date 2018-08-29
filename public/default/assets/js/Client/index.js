@@ -40,7 +40,7 @@ function search(p) {
 function rendDetail(trainOrder) {
     var $li = $('<li class="contentDetail"></li>'),
         $title = $('<div class="title-section clearfix"><div class="title"><a href="/question/' + trainOrder._id + '">' + trainOrder.title + '</a></div><div class="author">' + marked(trainOrder.author) + '</div></div>'),
-        $content = $('<div class="content-section clearfix"><div class="content">' + marked(trainOrder.content) + '</div></div>');
+        $content = $('<div class="content-section clearfix"><div class="content markdown-body">' + marked(trainOrder.content) + '</div></div>');
 
     $li.append($title);
     $li.append($content);
