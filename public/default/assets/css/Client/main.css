@@ -69,6 +69,10 @@ table {
     box-shadow: 0 1px 1px #ccc;   */
 }
 
+.markdown-body table {
+    display: table;
+}
+
 table tr:hover {
     background: #fbf8e9;
     -o-transition: all 0.1s ease-in-out;
