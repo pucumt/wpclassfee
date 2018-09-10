@@ -6,14 +6,6 @@ var model = require("../../model.js"),
     User = model.ws_user;
 
 module.exports = function (app) {
-    app.get('/', function (req, res) {
-        res.render('Client/index.html', {
-            user: req.session.user,
-            websiteTitle: model.db.config.websiteTitle,
-            search: req.query.q
-        });
-    });
-
     app.get('/login', function (req, res) {
         res.render('Client/login.html', {
             websiteTitle: model.db.config.websiteTitle

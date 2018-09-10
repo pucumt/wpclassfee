@@ -3,6 +3,17 @@
 <div class="content">
     <div class="row">
         <ul class="ul-content">
+            {% for item in questions %}
+            <li class="contentDetail">
+                <div class="title-section clearfix">
+                    <div class="title"><a href="/question/{{item._id}}">{{item.title}}</a></div>
+                    <div class="author">{{item.author| safe}}</div>
+                </div>
+                <div class="content-section clearfix">
+                    <div class="markdown-body">{{item.content| safe}}</div>
+                </div>
+            </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

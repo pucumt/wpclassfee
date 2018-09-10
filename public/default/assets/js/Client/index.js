@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    search(curPage);
-
+    //search(curPage);
     $(window).scroll(function () {
         // console.log($(document).scrollTop());
         // console.log($(document).height() - $(window).height());

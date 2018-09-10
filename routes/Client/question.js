@@ -1,6 +1,7 @@
 var model = require("../../model.js"),
     pageSize = model.db.config.clientSize,
     auth = require("./auth.js"),
+    marked = require("marked"),
     Question = model.question,
     Category = model.category,
     CategoryArticle = model.categoryArticle,
@@ -19,13 +20,66 @@ module.exports = function (app) {
                         catId: req.params.catId
                     });
                 } else {
-                    res.render('Client/index.html', {
-                        user: req.session.user,
-                        websiteTitle: model.db.config.websiteTitle,
-                        search: req.query.q,
-                        catId: req.params.catId
-                    });
+                    var filter = {
+                        isChecked: 1
+                    };
+                    if (req.body.q && req.body.q.trim()) {
+                        filter.title = {
+                            $like: `%${req.body.q.trim()}%`
+                        };
+                    }
+                    if (req.params.catId) {
+                        filter.categoryId = req.params.catId;
+                    }
+                    Question.getFiltersWithPageClient(1, filter)
+                        .then(function (result) {
+                            result.rows.forEach(q => {
+                                q.author = marked(q.author);
+                                q.content = marked(q.content);
+                            });
+                            res.render('Client/index.html', {
+                                user: req.session.user,
+                                websiteTitle: model.db.config.websiteTitle,
+                                search: req.query.q,
+                                catId: req.params.catId,
+                                questions: result.rows
+                            });
+                        })
+                        .catch(err => {
+
+                        });
                 }
+            });
+    });
+
+    app.get('/', function (req, res) {
+        var filter = {
+            isChecked: 1
+        };
+        if (req.body.q && req.body.q.trim()) {
+            filter.title = {
+                $like: `%${req.body.q.trim()}%`
+            };
+        }
+        if (req.body.catId) {
+            filter.categoryId = req.body.catId;
+        }
+        Question.getFiltersWithPageClient(1, filter)
+            .then(function (result) {
+                result.rows.forEach(q => {
+                    q.author = marked(q.author);
+                    q.content = marked(q.content);
+                });
+
+                res.render('Client/index.html', {
+                    user: req.session.user,
+                    websiteTitle: model.db.config.websiteTitle,
+                    search: req.query.q,
+                    questions: result.rows
+                });
+            })
+            .catch(err => {
+
             });
     });
 
