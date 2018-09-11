@@ -2,6 +2,8 @@ var model = require("../../model.js"),
     pageSize = model.db.config.clientSize,
     auth = require("./auth.js"),
     marked = require("marked"),
+    Util = require('util'),
+    moment = require('moment'),
     Question = model.question,
     Category = model.category,
     CategoryArticle = model.categoryArticle,
@@ -90,6 +92,26 @@ module.exports = function (app) {
             })
             .catch(err => {
 
+            });
+    });
+
+    app.get('/site.xml', function (req, res) {
+        Question.getFilters({
+                isChecked: 1
+            })
+            .then(function (questions) {
+                var xmlArray = [];
+                xmlArray.push('<?xml version="1.0" encoding="utf-8"?>');
+                xmlArray.push('<urlset>');
+                questions.forEach(q => {
+                    xmlArray.push('<url>');
+                    xmlArray.push(Util.format('<loc>http://www.dushidao.com/question/%s</loc>', q._id));
+                    xmlArray.push(Util.format('<lastmod>%s</lastmod>', moment(q.updatedDate).format('YYYY-MM-DD')));
+                    xmlArray.push('</url>');
+                });
+                xmlArray.push('</urlset>');
+
+                res.end(xmlArray.join(""));
             });
     });
 
