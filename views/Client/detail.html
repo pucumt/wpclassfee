@@ -4,11 +4,11 @@
     <div class="row">
         <div class="detail">
             <div class="">
-                <div class="title"></div>
-                <div class="author"></div>
+                <div class="title">{{data.title}}</div>
+                <div class="author">{{data.author| safe}}</div>
             </div>
             <div class="">
-                <div class="question-content markdown-body"></div>
+                <div class="question-content markdown-body">{{data.content| safe}}</div>
             </div>
         </div>
     </div>

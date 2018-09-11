@@ -14,11 +14,18 @@ module.exports = function (app) {
             })
             .then(function (category) {
                 if (category.isArticle) {
-                    res.render('Client/catDetail.html', {
-                        user: req.session.user,
-                        websiteTitle: model.db.config.websiteTitle,
-                        catId: req.params.catId
-                    });
+                    CategoryArticle.getFilter({
+                            categoryId: req.params.catId
+                        })
+                        .then(function (article) {
+                            content = marked(article.content);
+                            res.render('Client/catDetail.html', {
+                                user: req.session.user,
+                                websiteTitle: model.db.config.websiteTitle,
+                                catId: req.params.catId,
+                                content: content
+                            });
+                        });
                 } else {
                     var filter = {
                         isChecked: 1
@@ -125,11 +132,20 @@ module.exports = function (app) {
     });
 
     app.get('/question/:id', function (req, res) {
-        res.render('Client/detail.html', {
-            user: req.session.user,
-            websiteTitle: model.db.config.websiteTitle,
-            id: req.params.id
-        });
+        Question.getFilter({
+                _id: req.params.id,
+                isChecked: 1
+            })
+            .then(function (question) {
+                question.author = marked(question.author);
+                question.content = marked(question.content);
+                res.render('Client/detail.html', {
+                    user: req.session.user,
+                    websiteTitle: model.db.config.websiteTitle,
+                    id: req.params.id,
+                    data: question
+                });
+            });
     });
 
     app.post('/question', function (req, res) {

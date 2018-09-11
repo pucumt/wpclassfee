@@ -1,7 +1,7 @@
 $(document).ready(function () {
     hljs.initHighlightingOnLoad();
 
-    getContent();
+    // getContent();
 });
 
 function getContent() {
