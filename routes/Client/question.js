@@ -21,6 +21,7 @@ module.exports = function (app) {
                             content = marked(article.content);
                             res.render('Client/catDetail.html', {
                                 user: req.session.user,
+                                pageTitle: model.db.config.websiteTitle + ', ' + category.name,
                                 websiteTitle: model.db.config.websiteTitle,
                                 catId: req.params.catId,
                                 content: content
@@ -46,6 +47,7 @@ module.exports = function (app) {
                             });
                             res.render('Client/index.html', {
                                 user: req.session.user,
+                                pageTitle: model.db.config.websiteTitle + ', ' + category.name,
                                 websiteTitle: model.db.config.websiteTitle,
                                 search: req.query.q,
                                 catId: req.params.catId,
@@ -81,6 +83,7 @@ module.exports = function (app) {
                 res.render('Client/index.html', {
                     user: req.session.user,
                     websiteTitle: model.db.config.websiteTitle,
+                    pageTitle: model.db.config.websiteTitle,
                     search: req.query.q,
                     questions: result.rows
                 });
@@ -141,6 +144,7 @@ module.exports = function (app) {
                 question.content = marked(question.content);
                 res.render('Client/detail.html', {
                     user: req.session.user,
+                    pageTitle: model.db.config.websiteTitle + ', ' + question.title,
                     websiteTitle: model.db.config.websiteTitle,
                     id: req.params.id,
                     data: question
