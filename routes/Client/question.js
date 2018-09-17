@@ -25,6 +25,8 @@ module.exports = function (app) {
                                 user: req.session.user,
                                 pageTitle: model.db.config.websiteTitle + ', ' + category.name,
                                 websiteTitle: model.db.config.websiteTitle,
+                                pageKey: category.name,
+                                pageDescription: category.description,
                                 catId: req.params.catId,
                                 content: content
                             });
@@ -51,6 +53,8 @@ module.exports = function (app) {
                                 user: req.session.user,
                                 pageTitle: model.db.config.websiteTitle + ', ' + category.name,
                                 websiteTitle: model.db.config.websiteTitle,
+                                pageKey: category.name,
+                                pageDescription: category.description,
                                 search: req.query.q,
                                 catId: req.params.catId,
                                 questions: result.rows
@@ -86,6 +90,8 @@ module.exports = function (app) {
                     user: req.session.user,
                     websiteTitle: model.db.config.websiteTitle,
                     pageTitle: model.db.config.websiteTitle,
+                    pageKey: "南通信息学培训, 南通C++培训, 南通软件开发，南通公众号开发，南通小程序开发",
+                    pageDescription: "江苏省南通市本地的信息学C++竞赛培训, 同时可软件开发，公众号开发、小程序开发",
                     search: req.query.q,
                     questions: result.rows
                 });
@@ -168,6 +174,8 @@ module.exports = function (app) {
                     user: req.session.user,
                     pageTitle: model.db.config.websiteTitle + ', ' + question.title,
                     websiteTitle: model.db.config.websiteTitle,
+                    pageKey: question.title,
+                    pageDescription: question.description,
                     id: req.params.id,
                     data: question
                 });

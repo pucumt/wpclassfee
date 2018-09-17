@@ -4,6 +4,10 @@ const db = require('../../db'),
 const Question = db.defineModel('questions', {
     title: db.STRING(50),
     author: db.STRING(1000), //作者信息
+    description: {
+        type: db.STRING(100),
+        defaultValue: ""
+    }, // 描述信息，用于seo
     content: db.TEXT,
     categoryId: db.STRING(50), // 文章所属类别
     isChecked: { // only isChecked==1 will show in index, 0 is default 9 is refused

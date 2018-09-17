@@ -61,6 +61,7 @@ module.exports = function (app) {
     app.post('/admin/category/add', function (req, res) {
         Category.create({
                 name: req.body.name,
+                description: req.body.description,
                 sequence: req.body.sequence,
                 isArticle: req.body.isArticle,
                 createdBy: req.session.admin._id
@@ -75,6 +76,7 @@ module.exports = function (app) {
     app.post('/admin/category/edit', function (req, res) {
         Category.update({
                 name: req.body.name,
+                description: req.body.description,
                 sequence: req.body.sequence,
                 isArticle: req.body.isArticle,
                 updatedDate: new Date(),

@@ -147,6 +147,7 @@ module.exports = function (app) {
             // edit
             Question.update({
                     title: req.body.name,
+                    description: req.body.description,
                     author: req.body.author,
                     content: req.body.content,
                     categoryId: req.body.categoryId,
@@ -166,6 +167,7 @@ module.exports = function (app) {
             // create
             Question.create({
                     title: req.body.name,
+                    description: req.body.description,
                     author: req.body.author,
                     content: req.body.content,
                     categoryId: req.body.categoryId,

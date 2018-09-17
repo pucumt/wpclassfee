@@ -8,6 +8,10 @@ const Category = db.defineModel('categories', {
     name: {
         type: db.STRING(50)
     },
+    description: {
+        type: db.STRING(100),
+        defaultValue: ""
+    }, // 描述信息，用于seo
     sequence: {
         type: db.INTEGER,
         defaultValue: 0

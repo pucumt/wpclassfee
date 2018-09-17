@@ -10,6 +10,7 @@ function search() {
     }, function (data) {
         if (data) {
             $("#name").val(data.title);
+            $("#description").val(data.description);
             $("#author").val(data.author);
             $("#category").val(data.categoryId);
             $("#content").val(data.content);
@@ -36,6 +37,7 @@ $("#btnSave").on("click", function (e) {
     var postURI = "/admin/ask",
         postObj = {
             name: $.trim($('#name').val()),
+            description: $.trim($('#description').val()),
             author: $.trim($('#author').val()),
             content: $.trim($('#content').val()),
             categoryId: $("#category").val(),

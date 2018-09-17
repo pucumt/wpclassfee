@@ -44,6 +44,7 @@ $("#btnAdd").on("click", function (e) {
     $('#myModal #id').val("");
     $('#myModal #myModalLabel').text("新增分类");
     $('#myModal #name').val("");
+    $('#myModal #description').val("");
     $('#myModal #sequence').val(0);
     $('#myModal #isArticle').val(0);
     $('#myModal').modal({
@@ -56,6 +57,7 @@ $("#myModal #btnSave").on("click", function (e) {
     var postURI = "/admin/category/add",
         postObj = {
             name: $.trim($('#myModal #name').val()),
+            description: $.trim($('#myModal #description').val()),
             sequence: $.trim($('#myModal #sequence').val()),
             isArticle: $('#myModal #isArticle').val()
         };
@@ -79,6 +81,7 @@ $("#gridBody").on("click", "td .btnEdit", function (e) {
     var entity = $(obj).parent().data("obj");
     $('#myModal #myModalLabel').text("修改分类");
     $('#myModal #name').val(entity.name);
+    $('#myModal #description').val(entity.description);
     $('#myModal #isArticle').val(entity.isArticle ? "1" : "0");
     $('#myModal #sequence').val(entity.sequence);
     $('#myModal #id').val(entity._id);
