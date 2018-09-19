@@ -7,4 +7,4 @@ Disallow: /admin/
 
 Allow: /question/
 
-Sitemap:http://www.dushidao.com/sitemap.xml
+Sitemap: /sitemap.xml
