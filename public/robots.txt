@@ -1,0 +1,10 @@
+User-agent:*
+
+Disallow: /default/
+Disallow: /uploads/
+Disallow: /downloads/
+Disallow: /admin/
+
+Allow: /question/
+
+Sitemap: http://www.dushidao.com/site.xml
