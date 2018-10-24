@@ -10,6 +10,7 @@ var model = require("../../model.js"),
     Comment = model.comment;
 
 module.exports = function (app) {
+
     app.get('/category/:catId', function (req, res) {
         Category.getFilter({
                 _id: req.params.catId
@@ -198,6 +199,22 @@ module.exports = function (app) {
             })
             .then(function (article) {
                 res.jsonp(article);
+            });
+    });
+
+    app.post('/app/questions', function (req, res) {
+        // 设置本地类别名称为：本地活动
+        Category.getFilter({
+                name: '本地活动'
+            })
+            .then(c => {
+                Question.getFilters({
+                        categoryId: c._id,
+                        isChecked: 1
+                    })
+                    .then(function (questions) {
+                        res.jsonp(questions);
+                    });
             });
     });
 }
