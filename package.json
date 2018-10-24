@@ -1,11 +1,11 @@
 {
-  "name": "wpqa",
+  "name": "wpclassfee",
   "version": "1.0.0",
   "private": true,
-  "description": "wpqa website",
+  "description": "wpclassfee website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/weple1/wpqa.git"
+    "url": "https://github.com/pucumt/wpclassfee.git"
   },
   "license": "GPL",
   "scripts": {

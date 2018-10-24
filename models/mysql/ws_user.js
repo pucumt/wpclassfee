@@ -1,11 +1,11 @@
 const db = require('../../db'),
     config = require('../../settings');
-
+// 微信user 
 const WS_user = db.defineModel('ws_users', {
     name: {
         type: db.STRING(20)
     },
-    password: db.STRING(50) // when login with wechat, it will be the openId
+    openId: db.STRING(50) // when login with wechat, it will be the openId
 });
 module.exports = WS_user;
 
